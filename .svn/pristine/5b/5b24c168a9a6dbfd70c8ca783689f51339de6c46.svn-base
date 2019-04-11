@@ -1,0 +1,36 @@
+第一次提交，创建一下这么几个文件。
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   .svn/entries
+#	new file:   .svn/format
+#	new file:   .svn/pristine/06/06eac9118426a3477873a64b3e610af42dcb2601.svn-base
+#	new file:   .svn/pristine/09/091d7ec6827176c6352c0deca31ed8074e4d8186.svn-base
+#	new file:   .svn/pristine/22/22ca47ab6eae3e3b64c7f63650913d1a6503ac21.svn-base
+#	new file:   .svn/pristine/46/468ba81102473aade6bf082e1b130772d02be3bc.svn-base
+#	new file:   .svn/pristine/60/602ac57daf5544c3a64b27401bcd34439ece77c5.svn-base
+#	new file:   .svn/pristine/68/681c531ad4025991e55acfd68e383ba1e629b5bf.svn-base
+#	new file:   .svn/pristine/89/8997bb3d63107ca199f0e3ca05af893d10aea464.svn-base
+#	new file:   .svn/pristine/8c/8c19ede61a167285754ee493caf33db8abec2180.svn-base
+#	new file:   .svn/pristine/90/901a1b73b95dd8379a7a548481f5deebf9ad0772.svn-base
+#	new file:   .svn/pristine/92/927e1d9f488b4ff556bb458caeadf7aaaaad7f2b.svn-base
+#	new file:   .svn/pristine/af/affad0da76b3a746c72c1417a72e344a11a4b910.svn-base
+#	new file:   .svn/pristine/c6/c60eee8808ada9393a073e6ee17eedf564c1b5af.svn-base
+#	new file:   .svn/pristine/cb/cb58ed92a36cf629012ae85ccd8ce7c289bb661d.svn-base
+#	new file:   .svn/pristine/d3/d33122a27fd895202a4d71e2a6660ce9815573e7.svn-base
+#	new file:   .svn/pristine/da/da39a3ee5e6b4b0d3255bfef95601890afd80709.svn-base
+#	new file:   .svn/pristine/de/de404f284df3dd48ed735a9ee915f387fac5aca6.svn-base
+#	new file:   .svn/wc.db
+#	new file:   .svn/wc.db-journal
+#	new file:   Makefile
+#	new file:   boot/asm.h
+#	new file:   boot/bootasm.S
+#	new file:   boot/bootmain.c
+#	new file:   tools/function.mk
+#	new file:   tools/gdbinit
+#
