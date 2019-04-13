@@ -153,8 +153,9 @@ qemu-nox: $(UCOREIMG)
 TERMINAL := gnome-terminal
 
 debug: $(UCOREIMG)
-	$(V)$(QEMU) -S -s -monitor telnet:127.0.0.1:4444,server,nowait -parallel stdio -hda $< -serial null &	$(V)sleep 2
-	$(V)$(TERMINAL) -e "$(GDB) -q -x tools/gdbinit"
+	$(V)$(QEMU) -S -s -monitor telnet:127.0.0.1:4444,server,nowait -parallel stdio -hda $< -serial null &	
+	$(V)sleep 2
+	$(V)$(TERMINAL) -e "$(GDB) obj/bootblock.o -q -x tools/gdbinit"
 	$(V)$(TERMINAL) -e "telnet 127.0.0.1 4444"
 
 debug-nox: $(UCOREIMG)

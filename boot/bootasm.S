@@ -16,13 +16,13 @@ start:
     cli                                             # Disable interrupts
     cld                                             # String operations increment
 
-    # Set up the important data segment registers (DS, ES, SS).这里是将ds，es，ss段寄存器全部清0
+    # Set up the important data segment registers (DS, ES, SS).
     xorw %ax, %ax                                   # Segment number zero
     movw %ax, %ds                                   # -> Data Segment
     movw %ax, %es                                   # -> Extra Segment
     movw %ax, %ss                                   # -> Stack Segment
 
-    # Enable A20: 这里是打开20地址线，这里不太重要，我也没有太仔细看
+    # Enable A20:
     #  For backwards compatibility with the earliest PCs, physical
     #  address line 20 is tied low, so that addresses higher than
     #  1MB wrap around to zero by default. This code undoes this.
@@ -52,12 +52,12 @@ seta20.2:
     movl %eax, %cr0
 
     # Jump to next instruction, but in 32-bit code segment.
-    # Switches processor into 32-bit mode. 段的基地址为0，段内偏移是$protcseg的地址
+    # Switches processor into 32-bit mode.
     ljmp $PROT_MODE_CSEG, $protcseg
 
 .code32                                             # Assemble for 32-bit mode
 protcseg:
-    # Set up the protected-mode data segment registers， ax现在的值是0x10，把所有的数据，堆栈段的基地址全部放在了0地址，其实和代码段是同样的基地址
+    # Set up the protected-mode data segment registers
     movw $PROT_MODE_DSEG, %ax                       # Our data segment selector
     movw %ax, %ds                                   # -> DS: Data Segment
     movw %ax, %es                                   # -> ES: Extra Segment
@@ -65,7 +65,7 @@ protcseg:
     movw %ax, %gs                                   # -> GS
     movw %ax, %ss                                   # -> SS: Stack Segment
 
-    # Set up the stack pointer and call into C. The stack region is from 0--start(0x7c00)， 堆栈是从高地址向低地址递减的
+    # Set up the stack pointer and call into C. The stack region is from 0--start(0x7c00)
     movl $0x0, %ebp
     movl $start, %esp
     call bootmain

@@ -1,1 +1,4 @@
 target remote :1234
+break bootmain
+display /4i $pc
+continue
