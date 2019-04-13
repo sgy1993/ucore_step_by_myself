@@ -1,0 +1,11 @@
+这个版本在proj2上面加了一点注释，关于某一些函数我自己的理解
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   boot/bootmain.c
+#	modified:   libs/x86.h
+#

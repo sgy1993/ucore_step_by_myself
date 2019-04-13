@@ -33,7 +33,7 @@
 #define LPTPORT         0x378
 #define CRTPORT         0x3D4
 #define SECTSIZE        512
-#define ELFHDR          ((struct elfhdr *)0x10000)      // scratch space
+#define ELFHDR          ((struct elfhdr *)0x100000)      // scratch space
 
 static uint16_t *crt = (uint16_t *) 0xB8000;            // CGA memory
 
@@ -136,7 +136,7 @@ readseg(uintptr_t va, uint32_t count, uint32_t offset) {
 static void
 cons_putc(int c) {
     lpt_putc(c);
-    cga_putc(c);
+    //cga_putc(c);
 }
 
 /* bootmain - the entry of bootloader */
@@ -149,6 +149,7 @@ bootmain(void) {
     if (ELFHDR->e_magic != ELF_MAGIC) {
         cons_putc('E');
     }
+    cons_putc('O');
     /* do nothing */
     while (1);
 }
