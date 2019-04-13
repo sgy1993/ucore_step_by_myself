@@ -16,7 +16,7 @@ inb(uint16_t port) {
     asm volatile ("inb %1, %0" : "=a" (data) : "d" (port) : "memory");
     return data;
 }
-
+//他这里一次执行了4个字节的从硬盘里读入
 static inline void
 insl(uint32_t port, void *addr, int cnt) {
     asm volatile (

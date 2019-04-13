@@ -115,13 +115,14 @@ readsect(void *dst, uint32_t secno) {
  * */
 static void
 readseg(uintptr_t va, uint32_t count, uint32_t offset) {
+    //起始地址是0x10000， 结束的地址是 0x10000 + count， 这里的地址指的都是cpu的逻辑地址， offset是从硬盘的哪个地方开始读取
     uintptr_t end_va = va + count;
 
     // round down to sector boundary
-    va -= offset % SECTSIZE;
+    va -= offset % SECTSIZE;    //这个是为了避免offset不是512的整数倍出现的问题。但是设计的时候一般都是整数的，不会设计的这么无聊
 
     // translate from bytes to sectors; kernel starts at sector 1
-    uint32_t secno = (offset / SECTSIZE) + 1;
+    uint32_t secno = (offset / SECTSIZE) + 1;//计算一下offset对应的硬盘sector是哪一个，因为第0个sector是主引导分区
 
     // If this is too slow, we could read lots of sectors at a time.
     // We'd write more to memory than asked, but it doesn't matter --
